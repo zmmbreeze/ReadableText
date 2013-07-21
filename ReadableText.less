@@ -1,0 +1,40 @@
+.readabletext {
+    @line: 16px;
+    @border-color: #CCC;
+    @focus-border-color: #0090D2;
+    @focus-back-color: #F9F9F9;
+
+    font-size: @line;
+    line-height: 2 * @line;
+    padding: 1em;
+    border: 3px dashed @border-color;
+    &:focus {
+        border-color: @focus-border-color;
+        outline: none;
+        background-color: @focus-back-color;
+    }
+
+    div, p {
+        margin: @line 0;
+    }
+
+    h3, h4, h5, h6 {
+        margin: 0;
+        font-size: @line;
+    }
+    h1 {
+        margin: 0;
+        font-size: 1.5 * @line;
+        line-height: 2 * @line;
+    }
+    h2 {
+        margin: 0;
+        font-size: 1.2 * @line;
+        lihe-height: 2 * @line;
+    }
+    h1, h2, h3, h4, h5, h6 {
+        & + div, & + p {
+            margin-top: 0;
+        }
+    }
+}
