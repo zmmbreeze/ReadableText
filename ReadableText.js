@@ -23,7 +23,16 @@ var ReadableText = (function() {
         } else {
             dom.style.height = this._height + 'px';
         }
-        dom.contentEditable = true;
+        var frame = this._frame = document.createElement('iframe');
+        // dom.contentEditable = true;
+        var value = '<br/>';
+        if (dom.nodeName.toLowerCase() === 'textarea') {
+            value = dom.innerHTML;
+        } else {
+            value = dom.value;
+        }
+        console.log(value);
+        console.log(this._frame.contentWindow);
     };
 
     return Klass;
